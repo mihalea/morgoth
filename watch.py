@@ -97,7 +97,7 @@ def parse_uid(data):
     match = pattern_uid.match(data)
     return match.group('uid')
 
-def search(mail):
+def forward_and_archive(mail):
     """ Search from emails sent from the camera and then forward them
     to the configured email and archive them """
 
@@ -112,7 +112,7 @@ def search(mail):
 def main():
     """ Try to connect and process the email box """
     mail = connect()
-    search(mail)
+    forward_and_archive(mail)
     mail.logout()
 
 if __name__ == '__main__':
